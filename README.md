@@ -1,1 +1,1 @@
-# algorithms and tricks
+# algorithms and tricks of Python
