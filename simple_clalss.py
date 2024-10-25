@@ -16,9 +16,22 @@ class Programmer(Person):
     def info(self):
         print( f"{self.language} -> {self.sallary}")
 
+class Book:
+    def __init__(self, title, year,author, theme):
+        self.title = title
+        self.year = year
+        self.author = author
+        self.theme = theme
+
+    def about_book(self):
+        print(f"{self.title}, {self.year}, {self.author}, {self.theme}")
+
 
 alex = Person("Alex", 33)
 alex.output()
 
 web_developer = Programmer("Python", 120000)
 web_developer.info()
+
+first_book = Book("Programming on Python", 2024, "Sebastyan Rushka", "Programming")
+first_book.about_book()
