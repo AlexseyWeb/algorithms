@@ -27,6 +27,15 @@ class Book:
         print(f"{self.title}, {self.year}, {self.author}, {self.theme}")
 
 
+class DataBase():
+    def __init__(self, name, port):
+        self.name = name 
+        self.port = port 
+
+    def connect_to_db(self):
+        print(f"{self.name}:///user:password:{self.port}")
+
+
 alex = Person("Alex", 33)
 alex.output()
 
@@ -35,3 +44,6 @@ web_developer.info()
 
 first_book = Book("Programming on Python", 2024, "Sebastyan Rushka", "Programming")
 first_book.about_book()
+
+mysql = DataBase("mysql", 44883)
+mysql.connect_to_db()
