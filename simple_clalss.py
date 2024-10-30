@@ -47,3 +47,13 @@ first_book.about_book()
 
 mysql = DataBase("mysql", 44883)
 mysql.connect_to_db()
+
+mans = (alex, web_developer)
+
+def my_generator(my_tuple: tuple):
+    for i in my_tuple:
+         yield i
+     
+
+first = my_generator(mans).__iter__()
+print(first)
