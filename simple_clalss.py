@@ -57,3 +57,8 @@ def my_generator(my_tuple: tuple):
 
 first = my_generator(mans).__iter__()
 print(first)
+
+
+cities = ["Moscow", "New-Yourk", "Minsk", "Minsk"]
+set_cities = set(cities)
+print(set_cities)
