@@ -62,3 +62,7 @@ print(first)
 cities = ["Moscow", "New-Yourk", "Minsk", "Minsk"]
 set_cities = set(cities)
 print(set_cities)
+
+quadre = [x*2 for x in range(100000)]
+print(quadre
+)
