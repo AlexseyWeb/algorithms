@@ -66,3 +66,7 @@ print(set_cities)
 quadre = [x*2 for x in range(100000)]
 print(quadre
 )
+
+with open("test.txt", "w") as txt:
+    txt.write("this is a text!")
+
