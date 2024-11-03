@@ -1,3 +1,5 @@
+import tempfile
+
 class Person:
     def __init__(self, name, age):
         self.name = name 
@@ -26,6 +28,13 @@ class Book:
     def about_book(self):
         print(f"{self.title}, {self.year}, {self.author}, {self.theme}")
 
+    def save_to_file(self, text):
+        with tempfile.NamedTemporaryFile(delete=False) as temp:
+            temp.write(b"text")
+            path = temp.name
+            print(path)
+
+
 
 class DataBase():
     def __init__(self, name, port):
@@ -44,6 +53,7 @@ web_developer.info()
 
 first_book = Book("Programming on Python", 2024, "Sebastyan Rushka", "Programming")
 first_book.about_book()
+first_book.save_to_file("This is first a book")
 
 mysql = DataBase("mysql", 44883)
 mysql.connect_to_db()
@@ -63,10 +73,10 @@ cities = ["Moscow", "New-Yourk", "Minsk", "Minsk"]
 set_cities = set(cities)
 print(set_cities)
 
-quadre = [x*2 for x in range(100000)]
-print(quadre
-)
+quadre = [x*2 for x in range(10)]
+print(quadre)
 
 with open("test.txt", "w") as txt:
     txt.write("this is a text!")
+
 
