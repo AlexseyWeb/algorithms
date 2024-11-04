@@ -77,6 +77,11 @@ quadre = [x*2 for x in range(10)]
 print(quadre)
 
 with open("test.txt", "w") as txt:
-    txt.write("this is a text!")
+    txt.write(""" 
+                  Чтоб мудро жизнь прожить, знать надобно немало,
+                  Два важных правила запомни для начала:
+                  Ты лучше голодай, чем что попало есть,
+                  И лучше будь один, чем вместе с кем попало.""")
 
-
+with open("test.txt") as txt:
+    print(txt.read())
