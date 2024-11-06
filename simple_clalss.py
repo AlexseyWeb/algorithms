@@ -85,3 +85,18 @@ with open("test.txt", "w") as txt:
 
 with open("test.txt") as txt:
     print(txt.read())
+
+class Vector:
+    """ Class work with vectors in linear algebra"""
+    def __init__(self, v1, v2):
+        self.v1 = v1 
+        self.v2 = v2
+
+    def add_vectors(self):
+        """Calculate vectors """
+        return (self.v1[0] + self.v2[0], self.v1[1] + self.v2[1])
+
+
+vectors = Vector((2, 3), (4, 5))
+summa_vectors = vectors.add_vectors()
+print(f"Summa of vectors = {summa_vectors}")
