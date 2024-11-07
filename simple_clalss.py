@@ -8,7 +8,9 @@ class Person:
     def output(self):
         print(f"{self.name} -> {self.age}")
 
-
+class Sample:
+    def __del__(self):
+        print("Объект удалён!")
 
 class Programmer(Person):
     def __init__(self, language=None, sallary=10000):
@@ -47,6 +49,9 @@ class DataBase():
     def info():
         print(f"Your database -> running")
 
+
+sample = Sample()
+del sample
 
 alex = Person("Alex", 33)
 alex.output()
