@@ -44,6 +44,9 @@ class DataBase():
     def connect_to_db(self):
         print(f"{self.name}:///user:password:{self.port}")
 
+    def info():
+        print(f"Your database -> running")
+
 
 alex = Person("Alex", 33)
 alex.output()
@@ -57,6 +60,7 @@ first_book.save_to_file("This is first a book")
 
 mysql = DataBase("mysql", 44883)
 mysql.connect_to_db()
+DataBase.info()
 
 mans = (alex, web_developer)
 
