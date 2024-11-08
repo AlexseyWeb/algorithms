@@ -9,6 +9,9 @@ class Person:
         print(f"{self.name} -> {self.age}")
 
 class Sample:
+    def __init__(self):
+        print("Объект создан!")
+        
     def __del__(self):
         print("Объект удалён!")
 
