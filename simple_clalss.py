@@ -49,8 +49,12 @@ class DataBase():
     def connect_to_db(self):
         print(f"{self.name}:///user:password:{self.port}")
 
-    def info():
+    def info(self):
         print(f"Your database -> running")
+
+class Postgress(DataBase):
+    def about(self, base="Postgress"):
+        print(f"{base}")
 
 
 sample = Sample()
@@ -68,7 +72,11 @@ first_book.save_to_file("This is first a book")
 
 mysql = DataBase("mysql", 44883)
 mysql.connect_to_db()
-DataBase.info()
+
+
+postgress = Postgress("postgress", "3323")
+postgress.about()
+postgress.info()
 
 mans = (alex, web_developer)
 
