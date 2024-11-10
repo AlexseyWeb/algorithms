@@ -38,6 +38,9 @@ class Book:
             temp.write(b"text")
             path = temp.name
             print(path)
+    
+    def __del__(self):
+        print("Remove object")
 
 
 
