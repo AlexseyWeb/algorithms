@@ -123,3 +123,9 @@ class Vector:
 vectors = Vector((2, 3), (4, 5))
 summa_vectors = vectors.add_vectors()
 print(f"Summa of vectors = {summa_vectors}")
+
+names_list = ["alex", "sergey", "max", "john"]
+ages_list = [22, 33, 44, 27]
+
+union_list = tuple(zip(names_list, ages_list))
+print(union_list)
