@@ -25,3 +25,7 @@ print(type(mans))
 
 print(mans.__doc__)
 print(f"All attributes of object -> {dir(mans)}")
+
+#Unpacking dictionary
+first_element, *other = man 
+print(first_element, other)
