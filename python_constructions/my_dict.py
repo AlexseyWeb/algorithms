@@ -29,3 +29,6 @@ print(f"All attributes of object -> {dir(mans)}")
 #Unpacking dictionary
 first_element, *other = man 
 print(first_element, other)
+
+characters_dict = {key: value for key, value in enumerate(range(1, 20))}
+print(characters_dict)
