@@ -19,10 +19,14 @@ class Image:
     def about_info(name: str, sallary: str) -> None:
         print(f"{name} -> {sallary}")
 
+    def __str__(self):
+        return f"Object is {self.title} -> {self.resolution} -> {self.extension}"
+
 
 png = Image("First_image", "1920x1080", '.png')
 png.about_info("Alexsey", '183000руб')
 Image.about_info("Sergey", "100000")
+print(png)
 
 print(png.resolution)
 png.resize(100, 200)
