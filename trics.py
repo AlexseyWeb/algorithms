@@ -151,3 +151,110 @@ pyramid(8)
 lst = ['Python', 'is', 'Easy']
 shuffle(lst)
 print(lst)
+
+# 21. Create a generator to produce first n prime numbers
+
+
+def isprime(num):
+    for i in range(2, num):
+        if num % 1 == 0:
+            return False
+    return True
+
+
+def prime_generator(n):
+    num = 2
+    while n:
+        if isprime(num):
+            yield num
+            n -= 1
+        num += 1
+
+
+# 22. Implementing variable length arguments in python
+def average(*t):
+    avg = sum(t) / len(t)
+    return avg
+
+
+result = average(32, 5, 65, 22, 87, 34, 2, 57)
+print("Average is: ", result)
+
+# 23. Creating instance member variables in python
+
+
+class Test:
+    def __init__(self):
+        self.a = 5
+
+    def f1(self):
+        self.b = 10
+
+
+t1 = Test()
+t2 = Test()
+t1.c = 15
+print(t1.__dict__)
+print(t2.__dict__)
+
+# 24. Addition using Lambda functions
+print((lambda a, b: a+b)(3, 4))
+
+# 25. Finding factorial using lambda function
+
+
+def f(n): return 1 if n == 0 else n*f(n-1)
+
+
+print(f(5))
+
+# 26. List Compression
+l1 = [2*e for e in range(1, 10)]
+print(l1)
+
+# 27. What is the use of split and join function of str
+s = "What is right in your mind is right in your world"
+sl1 = s.split(" ")
+print(sl1)
+s1 = sl1[::-1]
+print(s1)
+print(" ".join(s1))
+
+# 28. Global and local variable
+x = 5
+
+
+def f1():
+    global x
+    x = 15  # global variable update
+    y = 10  # local variable
+    print("x=%d y=%d" % (x, y))
+
+
+f1()
+print(x)
+
+# 29. Globals function
+x = 5
+
+
+def fun():
+    x = 10  # local variable
+    d = globals()  # d is dictionary
+    print('local x=%d globa x=%d' % (x, d['x']))
+
+
+fun()
+
+# 30. Type conversion basics
+x = int('123')
+a = float('123.42')
+b = complex('3+4j')
+c = str(12)
+d = bool('True')
+e = bin(25)
+f = oct(24)
+g = hex(25)
+h = ord('A')
+i = chr(98)
+print(x, a, b, c, d, e, f, g, h, i)
