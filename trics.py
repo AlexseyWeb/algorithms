@@ -1,3 +1,4 @@
+from functools import singledispatch
 from random import shuffle
 import re
 import decimal
@@ -258,3 +259,237 @@ g = hex(25)
 h = ord('A')
 i = chr(98)
 print(x, a, b, c, d, e, f, g, h, i)
+
+# 31. Type conversion
+x = 5
+print(type(x))
+s1 = '123'
+print(type(s1))
+print(str(x) + s1)
+print(x + int(s1))
+
+# 32. Decorator
+
+
+def welcome(fx):
+    def mfx(*t, **d):
+        print("Before hello function")
+        fx(*t, **d)
+        print("Thanks for using the function")
+    return mfx
+
+
+@welcome
+def hello():
+    print("Hello ! ")
+
+
+@welcome
+def add(a, b):
+    print(a+b)
+
+
+hello()
+add(1, 3)
+
+# class decorator
+
+
+class Calculator:
+    def __init__(self, func):
+        self.function = func
+
+    def __call__(self, *t, **d):
+        result = self.function(*t, **d)
+        return result ** 2
+
+
+@Calculator
+def add(a, b):
+    return a + b
+
+
+print(add(10, 32))
+
+# 33. Iterators and Generators
+l1 = [23, 65, 22, 76, 34, 98, 43]
+it = iter(l1)
+while True:
+    try:
+        print(next(it))
+    except StopIteration:
+        break
+
+
+def evenNum(n):
+    i = 1
+    while n:
+        yield 2*i
+        i += 1
+        n -= 1
+
+
+it = evenNum(10)
+evenList = []
+while True:
+    try:
+        evenList.append(next(it))
+    except StopIteration:
+        break
+print(evenList)
+
+# 34. Function overloading allowed in python?
+# Using default arguments
+
+
+def greet(name, greeting="Hello"):
+    return f"{greeting}, {name}"
+
+
+print(greet("Alexsey"))
+print(greet("Alexsey", "Hi"))
+
+# Using Variable-Length arguments
+
+
+def add(*t):
+    return sum(t)
+
+
+print(add(1, 30))
+print(add(1, 2, 3))
+
+# Using functools.singledispatch
+
+
+@singledispatch
+def process(value):
+    raise NotImplementedError("Unsupported type")
+
+
+@process.register(int)
+def _(value):
+    return f"Processing an integer: {value}"
+
+
+@process.register(str)
+def _(value):
+    return f"Processing a string: {value}"
+
+
+print(process(10))
+print(process("Hello"))
+
+# Using Class Methods
+
+
+class Math:
+    @staticmethod
+    def multiply(a, b):
+        return a*b
+
+    @staticmethod
+    def multiply(a, b, c):
+        return a*b*c
+
+
+class Math:
+    @staticmethod
+    def multiply(*t):
+        result = 1
+        for num in t:
+            result *= num
+        return result
+
+
+print(Math.multiply(2, 3))
+print(Math.multiply(2, 3, 4, 5))
+
+# 35. Postitional arguments in python
+
+
+def f1(a, b):
+    print(f"a = {a}, b = {b}")
+
+
+f1(3, 4)
+f1(30, b=3)
+f1(a=2, b=8)
+
+# 36 Difference bettween sorted and sort function
+t1 = (34, 64, 32, 79, 88, 32, 93)
+s_t1 = sorted(t1)
+print(s_t1)
+print(type(s_t1))
+
+l1 = [33, 88, 22, 90, 202, 3]
+l1.sort()
+print(type(l1))
+print(l1)
+
+# 37 Static method and variable
+
+
+class myclass:
+    a = 5
+
+    def __init__(self):
+        self.x = 10
+        y = 4
+        myclass.b = 34  # static variable
+
+    def f1(self):
+        myclass.c = 65  # static variable
+
+    @staticmethod
+    def f2(self):
+        myclass.d = 55  # static variable
+
+    @classmethod
+    def f3(cls):
+        cls.e = 14  # static variable
+        myclass.f = 45  # static variable
+
+
+myclass.g = 11  # static variable
+
+# 38. How to use else with loop in python
+i = 20
+while i <= 10:
+    print(i, end=" ")
+    if i == 5:
+        break
+    i += 1
+else:
+    print("You are in else")
+
+# 39. what is name mingling in python
+
+
+class world:
+    x = 10
+    __india = 20
+
+
+print(world.x)
+print(world._world__india)
+
+# 40. Class object and instance object
+
+
+class test:
+    x = 20
+
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
+
+    def show(self):
+        print(self.a, self.b)
+
+
+print(test.x)  # class object
+t1 = test(4, 5)  # instance object
+t1.show()
+print(t1.a)
+print(t1.b)
