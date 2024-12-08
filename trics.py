@@ -493,3 +493,125 @@ t1 = test(4, 5)  # instance object
 t1.show()
 print(t1.a)
 print(t1.b)
+
+# 41.  Init method class, this is a constructor class
+
+
+class Test1:
+    def __init__(self):
+        self.a = 10
+        self.b = 222
+
+
+t1 = Test1()
+print(t1.a, t1.b)
+
+# 42. What are default arguments in functions
+
+
+def add(a, b, c=4):
+    return a+b+c
+
+
+s = add(3, 2)
+print(f"Result {s}")
+
+# 43. Extract int typee values from a list
+my_list = ['abc', 34.56, 32, 4+4j, 'b', 55, 55.3, '80', 180]
+print(my_list)
+l2 = []
+for e in my_list:
+    if type(e) == int:
+        l2.append(e)
+print(l2)
+
+
+# 44. Python supported inheriatance
+class A:
+    pass
+
+
+class B:
+    pass
+
+
+class C(A, B):
+    pass
+
+
+# 45. What is monkey patching
+class TestMonkey:
+    def __init__(self, x):
+        self.a = x
+
+    def get_data(self):
+        print('send code to fetch data from database')
+
+    def f1(self):
+        self.get_data()
+
+    def f2(self):
+        self.get_data()
+
+
+t1 = TestMonkey(4)
+t1.f1()
+t1.f2()
+
+
+def get_new_data(self):
+    print('some to code fetch data from test data')
+
+
+TestMonkey.get_data = get_new_data
+print('After Monkey Patching')
+t1.f1()
+t1.f2()
+
+# 46. Accept a number user check whether it is prime or not
+num = 3
+for i in range(2, num):
+    if num % i == 0:
+        print("number is not prime")
+        break
+else:
+    print('number is prime')
+
+# 47. Write a program to print the given numbers is odd or even
+num = 30
+if num % 2 == 0:
+    print("Even")
+else:
+    print("Odd")
+
+# 48. Write a program to find the given number is positive or negative
+num: float = -33.3
+if num > 0:
+    print("Number is positive")
+elif num == 0:
+    print("Number is zero")
+else:
+    print("Number is negative")
+
+# 49. Write a program to find the sum of two number
+num_one = 1
+num_two = 2
+print(num_one + num_two)
+
+
+# 50. Write a program to find GCD of two numbers
+first_num = 235
+second_num = 875
+
+
+def gcd(a, b):
+    if a == 0 or a == b:
+        return b
+    elif b == 0:
+        return a
+    elif a > b:
+        return gcd(a-b, b)
+    return gcd(a, b - a)
+
+
+print(gcd(first_num, second_num))
