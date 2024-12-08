@@ -615,3 +615,142 @@ def gcd(a, b):
 
 
 print(gcd(first_num, second_num))
+
+# 51 Write a program to pritn
+total_star = 5
+for i in range(1, total_star+1):
+    print("* " * i)
+    i += 1
+
+# 52. Write a program
+number = 4
+for i in range(1, number + 1):
+    for j in range(1, i + 1):
+        print(j, end=" ")
+    print()
+    i += 1
+
+# 53. Write a program
+
+
+def tri(n):
+    num = 1
+    for i in range(0, n):
+        for j in range(0, i+1):
+            print(num, end=" ")
+            num += 1
+        print()
+
+
+tri(5)
+
+# 54. Write a program
+
+
+def apha(n):
+    p = 65
+    for i in range(n):
+        for j in range(i + 1):
+            ch = chr(p)
+            print(ch, end=" ")
+        p += 1
+        print()
+
+
+apha(5)
+
+# 55. Write a program
+
+
+def alpha(n):
+    p = 65
+    for i in range(n):
+        for j in range(i+1):
+            ch = chr(p)
+            p += 1
+            print(ch, end=" ")
+        print()
+
+
+alpha(5)
+
+# 56. Write pyramid
+
+
+def pyramid_chars(n):
+    num = 65
+    for i in range(n):
+        for j in range(i, n):
+            print(" ", end="")
+        for j in range(i+1):
+            print(chr(num), end=" ")
+            num += 1
+        num = 65
+        print()
+
+
+pyramid_chars(5)
+
+# 57. Write chars pyramid
+
+
+def chars_pyramid(n):
+    num = 65
+    for i in range(n + 1):
+        for j in range(n-i):
+            print(" ", end="")
+        for j in range(1, i+1):
+            print(chr(num), end=" ")
+            num += 1
+        print("")
+
+
+chars_pyramid(6)
+
+# 58. Create a sandglass pattern
+
+
+def sandglass(n):
+    n = 5
+    for i in range(n):
+        for j in range(i+1):
+            print("", end=" ")
+        for j in range(i, n):
+            print("*", end=" ")
+        print()
+    for i in range(n):
+        for j in range(i, n):
+            print("", end=" ")
+        for j in range(i+1):
+            print("*", end=" ")
+        print()
+
+
+sandglass(6)
+
+# 59. Create a reverse pyramid pattern
+
+
+def reverse_pyramid(n):
+    for i in range(n):
+        for j in range(i+1):
+            print(" ", end="")
+        for j in range(i, n):
+            print("*", end=" ")
+        print()
+
+
+print()
+reverse_pyramid(5)
+
+# 60. Square matrix
+
+
+def square_matrix(n):
+    for i in range(n):
+        for j in range(n):
+            print("*", end=" ")
+        print()
+
+
+square_matrix(5)
