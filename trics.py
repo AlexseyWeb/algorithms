@@ -754,3 +754,170 @@ def square_matrix(n):
 
 
 square_matrix(5)
+
+# 61. Parallel vertical lines
+
+
+def draw_parallel_line():
+    n = 9
+    for i in range(n):
+        for j in range(n):
+            if j == 0 or j == n - 1:
+                print("*", end=" ")
+            else:
+                print(" ", end=" ")
+        print()
+
+
+draw_parallel_line()
+print()
+# 62. square plus pattern
+
+
+def draw_square_pattern():
+    n = 9
+    for i in range(n):
+        for j in range(n):
+            if i == n//2 or j == n//2:
+                print("*", end=" ")
+            else:
+                print(" ", end=" ")
+        print()
+
+
+draw_square_pattern()
+
+# 63. Cross pattern
+
+
+def draw_cross_pattern():
+    n = 9
+    for i in range(n):
+        for j in range(n):
+            if i == j or i+j == n - 1:
+                print("*", end=" ")
+            else:
+                print(" ", end=" ")
+        print()
+
+
+draw_cross_pattern()
+print()
+# 64. hollow square pattern
+
+
+def draw_hollow_squar_pattern():
+    n = 9
+    for i in range(n):
+        for j in range(n):
+            if i == 0 or i == n - 1 or j == 0 or j == n-1:
+                print("*", end=" ")
+            else:
+                print(" ", end=".")
+        print()
+
+
+draw_hollow_squar_pattern()
+
+# 65 Check if a number is palindrome or not
+
+
+def isPalindrom():
+    n = 1001
+    m = n
+    sum = 0
+    while m != 0:
+        d = m % 10
+        sum = sum * 10 + d
+        m = m // 10
+    if sum == n:
+        print("Yes")
+    else:
+        print("No")
+
+
+isPalindrom()
+
+# 66 Check if a number is spy number
+
+
+def isSpyNumber():
+    n = 132
+    m = n
+    sum = 0
+    prod = 1
+    while m != 0:
+        d = m % 10
+        m = m//10
+        sum = sum + d
+        prod = prod * d
+    if sum == prod:
+        print("Yes")
+    else:
+        print("No")
+
+
+isSpyNumber()
+
+# 67. Check if a number is Krishna Murthy
+
+
+def check_krishna():
+    import math
+    n = 145
+    m = n
+    sum = 0
+    while m != 0:
+        d = m % 10
+        sum = sum + math.factorial(d)
+        m = m // 10
+    if sum == n:
+        print("Yes")
+    else:
+        print("No")
+
+
+check_krishna()
+
+# 68. Find the factors of a number
+
+
+def find_factors():
+    n = int(input("Enter a number: "))
+    for i in range(1, n+1):
+        if n % i == 0:
+            print(i, end=" ")
+
+
+# find_factors()
+
+# 69. Find if the number is pronic or not.
+def find_pronic():
+    n = int(input("Enter a number: "))
+    fact = 0
+    for i in range(1, n+1):
+        if (i*(i+1) == n):
+            print(f"{i} x {i+1} = {n}")
+            fact = i
+    if fact > 0:
+        print("Pronic number")
+    else:
+        print("Not a Pronic number ")
+
+
+# find_pronic()
+
+# 70 Arithematic series
+
+
+def arithematic_sequence():
+    n = int(input("Enter a number: "))
+    sum = 0
+    for i in range(1, n+1):
+        sum = sum + i
+    print('Sum of series: ', sum)
+
+
+# arithematic_sequence()
+
+# 71.
