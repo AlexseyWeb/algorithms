@@ -920,4 +920,156 @@ def arithematic_sequence():
 
 # arithematic_sequence()
 
-# 71.
+# 71. sequesnce
+def sequence():
+    n = 20
+    sum = 0
+    a = 2
+    for i in range(1, n+1):
+        sum = sum + a
+        a += 2
+    print('Sum of seriws: ', sum)
+
+
+sequence()
+
+# 72. sequence qwadro
+
+
+def sequence_power():
+    n = 10
+    x = 3
+    sum = 0
+    a = 10
+    for i in range(1, n+1):
+        sum = sum + x ** i
+    print('Sum of series: ', sum)
+
+
+sequence_power()
+
+# 73. sequence factorial
+
+
+def sequence_factorial():
+    n = 20
+    x = 2
+    sum = 0
+    a = 2
+    for i in range(1, n+1):
+        sum = sum + a ** x
+        a += 2
+    print('Sum of series: ', sum)
+
+
+sequence_factorial()
+
+# 74. sequence sample
+
+
+def sequence_other():
+    n = 20
+    x = 2
+    sum = 0
+    a = 1
+    for i in range(1, n+1):
+        sum = sum + (a**3) / x
+        a += 2
+    print('Sum of series: ', sum)
+
+
+sequence_other()
+
+# 75. 2/10 + 4/9 + 6/8 + 8/7
+
+
+def sequence_names():
+    n = 10
+    sum = 0
+    a = 2
+    b = 10
+    for i in range(1, n+1):
+        sum = sum + a/b
+        a += 2
+        b -= 1
+    print('Sum of series: ', sum)
+
+
+sequence_names()
+
+# 76. Geometrix series
+
+
+def geometrix_sequence():
+    n = 20
+    sum = 0
+    a = 2
+    for i in range(1, n+1):
+        sum = sum + a * 2
+        a = a * 2
+    print('Sum of series: ', sum)
+
+
+geometrix_sequence()
+
+# 77. geometrix 3
+
+
+def geometrix_three():
+    n = 20
+    sum = 0
+    a = 10
+    for i in range(1, n+1):
+        sum = sum + a
+        a = a * 3
+    print('Sum of series: ', sum)
+
+
+geometrix_three()
+
+# 78. Geometrix other
+
+
+def geometrix_other():
+    n = 10
+    sum = 0
+    a = 5
+    for i in range(1, n+1):
+        sum = sum + a
+        a = a * 3
+    print('Sum of series: ', sum)
+
+# 79. geometrix two
+
+
+def geometrix_second():
+    n = 10
+    x = 2
+    sum = 0
+    a = 2
+    for i in range(1, n+1):
+        sum = sum + x / a
+        a = a * 2
+    print('Sum of series: ', sum)
+
+
+geometrix_second()
+
+# 80. geometrix (x+2)/ 10 + (x+4)/ 30
+
+
+def geometrix_party():
+    n = 20
+    sum = 0
+    a = 2
+    for i in range(1, n+1):
+        if i % 2 == 0:
+            sum = sum - a
+        else:
+            sum = sum + a
+        a = a * 3
+    print('Sum of series: ', sum)
+
+
+geometrix_party()
+# 81.
