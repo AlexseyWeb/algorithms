@@ -1072,4 +1072,45 @@ def geometrix_party():
 
 
 geometrix_party()
-# 81.
+# 81. sequence algoritm
+
+
+def sequence_algoritm():
+    n = 10
+    x = 2
+    a = 2
+    sum = 0
+    b = 10
+    for i in range(1, n+1):
+        sum = sum+(x+a) / b
+        a += 2
+        b = b*3
+    print('Sum of series: ', sum)
+
+
+sequence_algoritm()
+
+# 82. convert numbered string by reversing
+
+
+def convert_to_reversing_string():
+    s = '83838837726'
+    s = s[::-1]
+    print(s)
+    i = 0
+    res = ""
+    while (i < len(s) - 1):
+        x = s[i]+s[i+1]
+        if x == '32':
+            res = res + " "
+        elif int(x) in range(65, 91) or int(x) in range(97, 123):
+            res = res + chr(int(x))
+        elif i + 2 < len(s):
+            x = x + s[i+2]
+            res = res + chr(int(x))
+            i += 1
+        i += 2
+    print(res)
+
+
+convert_to_reversing_string()
