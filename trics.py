@@ -1114,3 +1114,58 @@ def convert_to_reversing_string():
 
 
 convert_to_reversing_string()
+
+# 83 What are the commonly used decorators in python
+
+
+class MyClass:
+    a = 'I am a class variable'
+
+    def __init__(self, len):
+        self.length = len
+
+    @classmethod
+    def class_method(cls):
+        print('This is a class method')
+        print(f'using class variable: {cls.a}')
+
+
+# using class method without creating an instance
+MyClass.class_method()
+
+# 84. classmethod example
+
+
+class InstanceCounter:
+    count = 0
+
+    def __init__(self):
+        InstanceCounter.count += 1
+
+    @classmethod
+    def get_instance_count(cls):
+        return cls.count
+
+
+# Creating instance
+obj1 = InstanceCounter()
+obj2 = InstanceCounter()
+total_instance = InstanceCounter.get_instance_count()
+print(f'Total number of instance created: {total_instance}')
+
+# 85 Static method
+
+
+class MyClass:
+    class_variable = 'I am a class variable'
+
+    def __init__(self, instance_variable):
+        self.instance_variable = instance_variable
+
+    @staticmethod
+    def static_method():
+        print('This is a static method')
+        print('It does not have access to instance variables or self.')
+
+
+MyClass.static_method()
