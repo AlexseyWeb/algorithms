@@ -1201,3 +1201,43 @@ result_subtract = Calculator.subtract(30, 10)
 result_multiply = Calculator.multiply(10, 22)
 result_divide = Calculator.divide(40, 20)
 print(result_add, result_subtract, result_multiply, result_divide)
+
+
+# 87. Class with @property decorator
+class Circle:
+    def __init__(self, radius):
+        self._radius = radius
+
+    @property
+    def radius(self):
+        """Getter method for radius"""
+        return self._radius
+
+    @radius.setter
+    def radius(self, value):
+        """setter method for radius"""
+        if value < 0:
+            raise ValueError('Value cannot be negative')
+        self._radius = value
+
+    @property
+    def area(self):
+        """Method to calculate the area"""
+        return 3.14 * self._radius ** 2
+
+
+# creating instance of Circle class
+obj = Circle(radius=5)
+print(f"radius: {obj.radius}")
+print(f"area: {obj.area}")
+
+# 88. Different types of parameters in python
+
+
+def print_params(x, y, z=3, *args, **kwargs):
+    print(x, y, z)
+    print(args)
+    print(kwargs)
+
+
+print_params(1, 2, 3, 4, 5, foo=1, bar=2)
