@@ -1153,7 +1153,7 @@ obj2 = InstanceCounter()
 total_instance = InstanceCounter.get_instance_count()
 print(f'Total number of instance created: {total_instance}')
 
-# 85 Static method
+# 85. Static method
 
 
 class MyClass:
@@ -1169,3 +1169,35 @@ class MyClass:
 
 
 MyClass.static_method()
+
+# 86.  static method calculator code
+
+
+class Calculator:
+    @staticmethod
+    def add(x, y):
+        return x + y
+
+    @staticmethod
+    def subtract(x, y):
+        return x - y
+
+    @staticmethod
+    def multiply(x, y):
+        return x * y
+
+    @staticmethod
+    def divide(x, y):
+        if y != 0:
+            return x / y
+        else:
+            print("Cannot divide by zero")
+            return None
+
+
+# using the static methdos without createing an instance
+result_add = Calculator.add(3, 32)
+result_subtract = Calculator.subtract(30, 10)
+result_multiply = Calculator.multiply(10, 22)
+result_divide = Calculator.divide(40, 20)
+print(result_add, result_subtract, result_multiply, result_divide)
