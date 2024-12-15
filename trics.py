@@ -1241,3 +1241,63 @@ def print_params(x, y, z=3, *args, **kwargs):
 
 
 print_params(1, 2, 3, 4, 5, foo=1, bar=2)
+
+# 89 Sample function decorator
+
+
+def say_log(func):
+    def wrap():
+        print("Start decorator")
+        func()
+        print("End decorator")
+    return wrap
+
+
+@say_log
+def my_log():
+    print(f"Start my log -> ")
+
+
+my_log()
+
+# 90. Operator overloading in python
+
+
+class Point:
+    def __init__(self, x=0, y=0):
+        self.x = x
+        self.y = y
+
+    def __add__(self, other):
+        return Point(self.x + other.x, self.y + other.y)
+
+    def __mul__(self, other):
+        if isinstance(other, Point):
+            return Point(self.x*other.x, self.y*other.y)
+        else:
+            return Point(self.x * other, self.y * other)
+
+    def __rmul__(self, other):
+        return Point(self.x * other, self.y * other)
+
+    def __repr__(self):
+        return ("{0}, {1}".format(self.x, self.y))
+
+
+p1 = Point(2, 3)
+p2 = Point(3, 4)
+
+print(p1 + p2)
+print(p1 * p2)
+
+# 91. File handling in python
+# reading a file bad variant
+fhand = open('test.txt', encoding='utf-8')
+inp = fhand.read()
+print(len(inp))
+print(inp[:20])
+fhand.close()
+# good variant
+with open('test.txt', 'r', encoding='utf-8') as file:
+    for line in file.readlines():
+        print(line.strip())
