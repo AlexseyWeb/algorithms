@@ -1301,3 +1301,15 @@ fhand.close()
 with open('test.txt', 'r', encoding='utf-8') as file:
     for line in file.readlines():
         print(line.strip())
+
+# 92. input filename to read and handle exceptions
+fnmae = input('Enter the file name: ')
+try:
+    fhand = open(fnmae)
+except:
+    print('File cannot be opened: ', fnmae)
+count = 0
+for line in fhand:
+    if line.startswith('Subject:')
+    count = count + 1
+print('There were', count, 'subject lines in', fnmae)
