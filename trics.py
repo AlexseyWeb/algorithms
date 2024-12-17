@@ -1359,3 +1359,4 @@ stack.push(3)
 print(stack.pop())
 print(stack.peek())
 print(stack.count())
+
