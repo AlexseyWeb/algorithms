@@ -1360,3 +1360,24 @@ print(stack.pop())
 print(stack.peek())
 print(stack.count())
 
+# 94 Singleton
+
+
+class Character:
+    _instance = None
+
+    def __new__(cls):
+        if not cls._instance:
+            cls._instance = super().__new__(cls)
+        return cls._instance
+
+    def __init__(self):
+        self.race = 'Cube'
+
+
+c = Character()
+b = Character()
+
+print(b.race)
+print(c.race)
+print(f'{id(c)} == {id(b)}')
