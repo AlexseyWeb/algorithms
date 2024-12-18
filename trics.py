@@ -1,3 +1,4 @@
+import pickle
 from functools import singledispatch
 from random import shuffle
 import re
@@ -1381,3 +1382,11 @@ b = Character()
 print(b.race)
 print(c.race)
 print(f'{id(c)} == {id(b)}')
+
+# 95. PICKLE
+with open(r'state.bin', 'w+b') as file:
+    pickle.dump(c, file)
+
+with open(r'state.bin', 'r+b') as file:
+    data = pickle.load(file)
+    print(data.race)
