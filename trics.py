@@ -1390,3 +1390,8 @@ with open(r'state.bin', 'w+b') as file:
 with open(r'state.bin', 'r+b') as file:
     data = pickle.load(file)
     print(data.race)
+
+# 96 Duplicate in list
+duplicate_list = [1, 2, 3, 4, 2]
+result = True if len(set(duplicate_list)) < len(duplicate_list) else False
+print(f"Если ли дубликат в списке {result}")
