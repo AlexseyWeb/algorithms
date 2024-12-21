@@ -1,3 +1,5 @@
+from enum import IntEnum
+from enum import Enum
 import json
 import pickle
 from functools import singledispatch
@@ -1401,3 +1403,47 @@ print(f"Если ли дубликат в списке {result}")
 # 97 Work with json
 my_obj_json = {'name': 'Alexsey', 'age': 33, 'game': 'WOW'}
 print(json.dumps(my_obj_json))
+
+# 98. ENUM type
+
+
+class TrafficLight(Enum):
+    RED = 1
+    YELLOW = 2
+    GREEN = 3
+
+
+print(TrafficLight.GREEN.name)
+print(TrafficLight.YELLOW.value)
+
+enum_colors = [x for x in TrafficLight]
+print(enum_colors)
+
+
+class Priority(IntEnum):
+    LOW = 1
+    NORMAL = 2
+    HIGH = 3
+
+
+int_enum_property = [x for x in Priority]
+print(int_enum_property)
+print(Priority.LOW < Priority.NORMAL)
+
+
+class Planet(Enum):
+    MERCURY = (3.303e+23, 2.439e6)
+    EARTH = (5.976e+24, 6.37814e6)
+    JUPITER = (1.9e+27, 7.149e7)
+
+    def __init__(self, mass, radius):
+        self.mass = mass
+        self.radius = radius
+
+    @property
+    def surface_gravity(self):
+        G = 6.67300E-11
+        return G * self.mass / (self.radius * self.radius)
+
+
+print(Planet.EARTH.surface_gravity)
