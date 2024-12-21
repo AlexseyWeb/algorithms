@@ -1,3 +1,4 @@
+import json
 import pickle
 from functools import singledispatch
 from random import shuffle
@@ -1395,3 +1396,8 @@ with open(r'state.bin', 'r+b') as file:
 duplicate_list = [1, 2, 3, 4, 2]
 result = True if len(set(duplicate_list)) < len(duplicate_list) else False
 print(f"Если ли дубликат в списке {result}")
+
+
+# 97 Work with json
+my_obj_json = {'name': 'Alexsey', 'age': 33, 'game': 'WOW'}
+print(json.dumps(my_obj_json))
