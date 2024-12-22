@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from enum import IntEnum
 from enum import Enum
 import json
@@ -1464,3 +1465,16 @@ class Person:
 
 alex = Person("Alexsandr", 33, 180343.44)
 print(alex.buy("Bread"))
+
+# 100 Data Class
+
+
+@dataclass
+class Person:
+    name: str
+    age: int
+    sallary: float
+
+
+man = Person('Alex', 33, 120343.23)
+print(man)
