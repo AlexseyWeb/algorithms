@@ -1447,3 +1447,20 @@ class Planet(Enum):
 
 
 print(Planet.EARTH.surface_gravity)
+# 99. Type Hint
+
+
+class Person:
+    def __init__(self, name: str, age: int, sallary: float):
+        self.name = name
+        self.age = age
+        self.sallary = sallary
+
+    def buy(self, product: str) -> str:
+        '''Returning title of product'''
+        self.product = product
+        return f'You buy -> {self.product}'
+
+
+alex = Person("Alexsandr", 33, 180343.44)
+print(alex.buy("Bread"))
