@@ -1469,7 +1469,7 @@ print(alex.buy("Bread"))
 # 100 Data Class
 
 
-@dataclass
+@dataclass(frozen=True)
 class Person:
     name: str
     age: int
