@@ -1,4 +1,4 @@
-"""Быстрая сортировка """
+"""Fast sorting """
 
 def quicksort(my_array):
     if len(my_array) <= 1:
