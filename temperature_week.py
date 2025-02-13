@@ -5,11 +5,11 @@ from urllib.error import HTTPError
 
 def main():
     try:
-        html = urlopen('https://pogoda.mail.ru/prognoz/moskva/14dney/')
+        html = urlopen(r'https://www.meteoservice.ru/weather/hourly/moskva')
         bs = BeautifulSoup(html.read(), 'html.parser' )
-        nameList = bs.find_all('span', {'class': 'hdr__inner'})
-        for name in nameList:
-            print(name.get_text())
+        text = bs.find('div',{'id':'row-1739368800'}).find('div', {'class':'temperature'}).find('span', {'class':'value'}).text 
+        print(f'Сегодня температура в Москве -> {text}')
+        
     except HTTPError as e:
         print("Connecting is refused!")
 
