@@ -15,6 +15,9 @@ class MyAddTestSuite(unittest.TestCase):
     def test_add4(self):
         self.assertEqual(4, add(1, 3), "should be 4")
 
+    def test_zero(self):
+        self.assertEqual(0, add(0, 0), "should be 0")
+
 
 if __name__ == "__main__":
     unittest.main()
